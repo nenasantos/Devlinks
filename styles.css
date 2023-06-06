@@ -26,13 +26,8 @@
 }
 
 body {
-    /* podemos escrever tudo apenas com backgroud como short hand
-    background-image: url(./assets/Background-1.jpg);
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
-    */
     background: var(--bg-url) no-repeat top center/cover;
+    height: 100vh;
 }
 
 
@@ -82,11 +77,12 @@ body * {
     left: 0;
     z-index: 1;
     transform: translateY(-50%);
+
+    animation: slide-back 0.2s;
   }
   
   .light #switch button {
-    right: 0;
-    left: initial;
+    animation: slide-in 0.2s forwards;
   }
   
   #switch span {
@@ -162,3 +158,30 @@ ul li a:hover {
     background: var(--highlight-color);
 }
 
+@media (min-width: 700px) {
+    :root {
+      --bg-url: url(./assets/Background-1.svg);
+    }
+  
+    .light {
+      --bg-url: url(./assets/Background-2.svg);
+    }
+  }
+
+  @keyframes slide-in {
+    from {
+      left: 0;
+    }
+    to {
+      left: 50%;
+    }
+  }
+  
+  @keyframes slide-back {
+    from {
+      left: 50%;
+    }
+    to {
+      left: 0;
+    }
+  }
