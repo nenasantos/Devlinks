@@ -27,7 +27,7 @@
 
 body {
     background: var(--bg-url) no-repeat top center/cover;
-    height: 100vh;
+
 }
 
 
@@ -82,6 +82,8 @@ body * {
   }
   
   .light #switch button {
+    right: 0;
+    left: initial;
     animation: slide-in 0.2s forwards;
   }
   
@@ -158,7 +160,7 @@ ul li a:hover {
     background: var(--highlight-color);
 }
 
-@media (min-width: 700px) {
+@media (min-width: 100px) {
     :root {
       --bg-url: url(./assets/Background-1.svg);
     }
